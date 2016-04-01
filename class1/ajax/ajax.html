@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+</head>
+<body>
+	<form>
+		<input type="text" name="lalal" id="test">
+		<input type="button" id="dsa">
+	</form>
+	<script>
+		var sub = document.getElementById('dsa');
+		sub.addEventListener('click', function(){
+			var tet = document.getElementById('test');
+			var test = tet.value;
+			var xhr = new XMLHttpRequest();
+			xhr.open('get','./test.php?a=' + test);
+			xhr.send();
+			xhr.addEventListener('readystatechange', function(){
+				if(xhr.readystate === 4)
+				console.log(xhr.responseText);
+			})
+		})
+	</script>
+</body>
+</html>
