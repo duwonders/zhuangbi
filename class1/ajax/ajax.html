@@ -9,15 +9,23 @@
 		<input type="button" id="dsa">
 	</form>
 	<script>
-		var sub = document.getElementById('dsa');
-		sub.addEventListener('click', function(){
-			var tet = document.getElementById('test');
-			var test = tet.value;
+		var sub = document.getElementById('dsa');//获取button
+		sub.addEventListener('click', function(){	//监听点击事件
+			var tet = document.getElementById('test');//获取输入框
+			var test = tet.value; //再点击的时候拿到输入框的内容
+
+			/**
+			 * [xhr description]
+			 * 这一段是ajax的具体实现
+			 * 
+			 */
 			var xhr = new XMLHttpRequest();
 			xhr.open('get','./test.php?a=' + test);
-			xhr.send();
-			xhr.addEventListener('readystatechange', function(){
-				if(xhr.readystate === 4)
+			xhr.send();//发送请求
+
+			xhr.addEventListener('readystatechange', function(){	//ajax的事件以及回调函数
+				console.log(xhr.readyState);
+				if(xhr.readyState === 4)
 				console.log(xhr.responseText);
 			})
 		})

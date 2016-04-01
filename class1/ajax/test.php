@@ -1,19 +1,20 @@
 <?php
-// echo "lalala";
 
-// $arr = [
-// 	'name' => 'liangshen',
-// 	'sex' => 'unknown',
-// 	'proper' => 'shabi'
-// ];
-// echo json_encode($arr);
+/**
+ * 这一段是ajax的
+ * 
+ */
+if($_GET['a']){
+	echo $_GET['a'];
+}else{
+	echo 'false';
+}
 
 
-// if($_GET['a']){
-// 	echo $_GET['a'];
-// }else{
-// 	echo 'false';
-// }
+
+/**
+ * 这一段是jsonp
+ */
 // $a = 1;2
 // $b = 2;
-echo "call($a,$b)";
+// echo "call($a,$b)";
